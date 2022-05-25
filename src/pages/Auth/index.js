@@ -1,9 +1,9 @@
 import React from 'react';
 import { View } from 'react-native';
 
-const auth = ({}) => {
+const Auth = ({}) => {
  return (
    <View/>
   );
 }
-export default  auth;
+export default  Auth;
