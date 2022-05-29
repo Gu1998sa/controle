@@ -10,6 +10,14 @@ const Auth = ({}) => {
   const[senha, setSenha] = useState('')
   const[hidePass, setHidePass] = useState(true);
 
+  function AuthLogin(){
+    if(email=='gustavo' && senha=='1'){
+      navigation.navigate('Personality')
+    }else{
+      alert('Usuario Invalido!')
+    }
+  }
+
  return (
    <View style={styles.Container} >
      <StatusBar  backgroundColor = "#F5DEB3"/>
@@ -75,7 +83,7 @@ const Auth = ({}) => {
       <TouchableOpacity style={styles.BtnReset} onPress={() => navigation.navigate('Forgot')}>
         <Text style={styles.TextReset}>Recuperar senha</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.BtnLogin}>
+      <TouchableOpacity style={styles.BtnLogin} onPress={() => AuthLogin()}>
         <Text style={styles.TextLogin}>
           Entrar
         </Text>

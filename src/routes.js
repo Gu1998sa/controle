@@ -5,6 +5,7 @@ import Auth from "./pages/Auth";
 import Initial from "./pages/Initial";
 import Forgot from "./pages/Forgot";
 import Register from "./pages/Register";
+import Personality from "./pages/Personality";
 
 const Stack = createStackNavigator();
 
@@ -19,6 +20,7 @@ const TelasStacks = () => {
       <Stack.Screen name="Initial" component={Initial}/>
       <Stack.Screen name="Forgot" component={Forgot}/>
       <Stack.Screen name="Register" component={Register}/>
+      <Stack.Screen name="Personality" component={Personality}/>
       
       </Stack.Navigator>
     )
