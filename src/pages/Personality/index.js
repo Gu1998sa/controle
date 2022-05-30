@@ -23,6 +23,10 @@ const Personality =({}) => {
             setCount(count + 1)
         }
     }
+    function IrHome(){
+        navigation.navigate('Home')
+    }
+
  return (
    <View style={styles.Container}>
        <Animatable.View delay={600} animation="fadeInLeft" style={styles.ContainerHeader}>
@@ -224,7 +228,7 @@ const Personality =({}) => {
                     />
                 </TouchableOpacity>
             :
-                <TouchableOpacity style={{ flexDirection:'row'}}>
+                <TouchableOpacity style={{ flexDirection:'row'}} onPress={() => IrHome()}>
                      <Text style={{top:'3%', color:'#F5DEB3', fontWeight:'bold', right:'10%'}}>                    
                         Concluir
                     </Text>
