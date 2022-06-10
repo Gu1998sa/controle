@@ -20,7 +20,7 @@ const Auth = ({}) => {
 
  return (
    <View style={styles.Container} >
-     <StatusBar  backgroundColor = "#F5DEB3"/>
+     <StatusBar  backgroundColor = "#2F4F4F"/>
      <View style={styles.Header}>
         <Animatable.Text delay={1000} animation="fadeInLeft" style={styles.Title}>
           Bem-vindo(a)
@@ -28,36 +28,40 @@ const Auth = ({}) => {
      </View>
      <Animatable.View animation="fadeInUp" style={styles.Forms}>
       <Text style={styles.TitleAuth}>Autenticação</Text>
+      <Text style={{top: 25, left: 30, color: '#FFF', fontSize:15, fontWeight: 'bold'}} >Email</Text>
       <View style={styles.IconEmail}>
         <Animatable.View delay={1000} animation="fadeInLeft"View style={{top:10}}>
           <MaterialCommunityIcons
             name="email"
             size={25} 
-            color="black"
+            color="#FFF"
 
           />
         </Animatable.View>
         <TextInput
           style={styles.Inputs}
-          placeholder='Email:'
+          placeholder='Ex: contato@dominio.com'
+          placeholderTextColor='#FFF'
           autoCorret={false}
           onChangeText={(texto) => setEmail(texto)}
           multiline={false}
           value={email}
         />
       </View>
+      <Text style={{top: 25, left: 30, color: '#FFF', fontSize:15, fontWeight: 'bold'}} >Senha</Text>
       <View style={styles.IconSenha}>
         <Animatable.View delay={1000} animation="fadeInLeft" style={{top:10}}>
           <MaterialCommunityIcons
             name="lock"
             size={25} 
-            color="black"
+            color="#FFF"
 
           />
         </Animatable.View>
         <TextInput
           style={styles.Inputs}
-          placeholder='Senha:'
+          placeholder='Ex: senha123'
+          placeholderTextColor='#FFF'
           secureTextEntry={hidePass}
           autoCorret={false}
           onChangeText={(texto) => setSenha(texto)}
@@ -65,18 +69,18 @@ const Auth = ({}) => {
           value={senha}
         />      
       </View>
-      <TouchableOpacity style={{position:'absolute', top: 175, left:'95%' }}  onPress={() => setHidePass(!hidePass)}>
+      <TouchableOpacity style={{position:'absolute', top: 225, left:'95%' }}  onPress={() => setHidePass(!hidePass)}>
           { hidePass == true ?
             <MaterialCommunityIcons 
             name="eye-outline"
             size={25} 
-            color="black"
+            color="#FFF"
             />
             :
             <MaterialCommunityIcons 
             name="eye-off-outline"
             size={25} 
-            color="black"
+            color="#FFF"
             />          
           } 
         </TouchableOpacity>
@@ -113,7 +117,7 @@ export default  Auth;
 const styles = StyleSheet.create({
   Container:{
     flex:1,
-    backgroundColor:'#F5DEB3',
+    backgroundColor:'#FFF',
   },
   Header:{
     flex:0.75,   
@@ -121,12 +125,13 @@ const styles = StyleSheet.create({
   },
   Title:{
     fontWeight:'bold',
-    paddingTop: '5%',
+    paddingTop: '20%',
     fontSize:24,
+    color:'#2F4F4F'
   },
   Forms:{
     flex:4,
-    backgroundColor:'#8B008B',
+    backgroundColor:'#2F4F4F',
     borderTopLeftRadius:5,
     borderTopRightRadius:5,
     paddingStart:'5%',
@@ -136,6 +141,7 @@ const styles = StyleSheet.create({
   IconEmail:{
     flexDirection:'row', 
     alignItems:'center',
+   
   },
   IconSenha:{
     flexDirection:'row',
@@ -143,29 +149,30 @@ const styles = StyleSheet.create({
   },
   TitleAuth:{
     textAlign:'center',
-    fontSize:21,
+    fontSize:27,  
     fontWeight:'bold',
-    color:'#F5DEB3',
-    bottom:20,    
+    color:'#FFF',
+    bottom:20,  
   },
   Inputs:{
     width:'90%',
     borderBottomWidth:1,
+    borderColor: '#FFF',
     height:45,    
     borderRadius:5,
     marginTop:'5%',
     padding:10,
-    fontWeight:'bold',
-    color:'#F5DEB3',
+    color:'#FFF',
     fontSize:14,    
   },
   BtnReset:{
     alignItems:'flex-end',
-    paddingRight:5
+    paddingRight:10
   },
   TextReset:{
     fontWeight:'bold',
     fontSize:13,
+    color:'#FFF'
   },  
   BtnLogin:{
     justifyContent:'center',
@@ -173,7 +180,8 @@ const styles = StyleSheet.create({
     top:'10%',
     height:35,
     borderRadius:25,
-    backgroundColor:'#F5DEB3'
+    backgroundColor:'#FFF'
+
   },
   TextLogin:{
     fontWeight:'bold',
@@ -201,7 +209,8 @@ const styles = StyleSheet.create({
   },
   TextCreate:{
     fontWeight:'bold',
-    color:'#F5DEB3'
+    color:'#FFF'
+
   }
   
 })

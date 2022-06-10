@@ -21,14 +21,14 @@ const Register = ({}) => {
     const toggleSwitchConsentimento = () => setConsentimento(previousState => !previousState);
  return (
    <View style={styles.Container}>
-    <StatusBar  backgroundColor = "#8B008B"/>
+    <StatusBar  backgroundColor = "#2F4F4F"/>
        <Animatable.View delay={600} animation="fadeInLeft" style={styles.Body}>
            <View style={{flexDirection:'row'}}>
             <TouchableOpacity style={{paddingLeft:'2%'}} onPress={() => navigation.navigate('Auth')}>
                     <MaterialCommunityIcons
                         name="arrow-left-circle"
                         size={35} 
-                        color="#F5DEB3"
+                        color="#2F4F4F"
                     />      
                 </TouchableOpacity>
             <Text style={styles.Title}>Cadastre-se</Text>
@@ -37,74 +37,82 @@ const Register = ({}) => {
        </Animatable.View>
        <View style={styles.ContainerForm}>
         <View style={styles.Forms}>
+            <Text style={{top:'4%', left: '7%', color: '#FFF', fontWeight:'bold'}}>Nome</Text>
            <View style={styles.IconNome}>
                 <Animatable.View delay={600} animation="fadeInLeft"View style={{top:10}}>
                     <MaterialCommunityIcons
                         name="account-box"
                         size={25} 
-                        color="black"
+                        color="#FFF"
 
                     />
                 </Animatable.View>
                 <TextInput
                 style={styles.Inputs}
-                placeholder='Nome:'
+                placeholder='Ex: Gustavo'
+                placeholderTextColor='#FFF'
                 autoCorret={false}
                 onChangeText={(texto) => setNome(texto)}
                 multiline={false}
                 value={nome}
                 />
             </View>
+            <Text style={{top:'4%', left: '7%', color: '#FFF', fontWeight:'bold'}}>Telefone</Text>
             <View style={styles.IconTelefone}>
                 <Animatable.View delay={600} animation="fadeInLeft"View style={{top:10}}>
                     <MaterialCommunityIcons
                         name="card-account-phone"
                         size={25} 
-                        color="black"
+                        color="#FFF"
 
                     />
                 </Animatable.View>
                 <TextInput
                 style={styles.Inputs}
-                placeholder='Telefone:'
+                placeholder='Ex:53991234567 '
                 autoCorret={false}
+                placeholderTextColor='#FFF'
                 onChangeText={(texto) => setTelefone(texto)}
                 multiline={false}
                 value={telefone}
                 keyboardType="number-pad"
                 />
             </View>   
+            <Text style={{top:'4%', left: '7%', color: '#FFF', fontWeight:'bold'}}>Email</Text>
             <View style={styles.IconEmail}>
                 <Animatable.View delay={600} animation="fadeInLeft"View style={{top:10}}>
                     <MaterialCommunityIcons
                         name="email"
                         size={25} 
-                        color="black"
+                        color="#FFF"
 
                     />
                 </Animatable.View>
                 <TextInput
                 style={styles.Inputs}
-                placeholder='Email:'
+                placeholder='Ex: contato@dominio.com'
+                placeholderTextColor='#FFF'
                 autoCorret={false}
                 onChangeText={(texto) => setEmail(texto)}
                 multiline={false}
                 value={email}
                 />
             </View>
+            <Text style={{top:'4%', left: '7%', color: '#FFF', fontWeight:'bold'}}>CPF</Text>
             <View style={styles.IconCpf}>
                 <Animatable.View delay={600} animation="fadeInLeft"View style={{top:10}}>
                     <MaterialCommunityIcons
                         name="card-account-details"
                         size={25} 
-                        color="black"
+                        color="#FFF"
 
                     />
                 </Animatable.View>
                 <TextInput
                 style={styles.Inputs}
-                placeholder='CPF:'
+                placeholder='Ex: 12345678900'
                 autoCorret={false}
+                placeholderTextColor='#FFF'
                 onChangeText={(texto) => setCpf(texto)}
                 multiline={false}
                 value={cpf}
@@ -119,7 +127,7 @@ const Register = ({}) => {
                     onValueChange={toggleSwitchEmail}
                     value={receberEmail}
                     />
-                   <Text style={{top:'3.5%', fontWeight:'bold', color:'#8B008B'}}> Permitir o recebimento de contato via E-mails </Text>
+                   <Text style={{top:'3.5%', fontWeight:'bold', color:'#FFF'}}> Permitir o recebimento de contato via E-mails </Text>
             </View>
             <View style={styles.ReceberSMS}>          
                 <Switch
@@ -129,7 +137,7 @@ const Register = ({}) => {
                     onValueChange={toggleSwitchSMS}
                     value={receberSMS}
                     />
-                   <Text style={{top:'3.5%', fontWeight:'bold', color:'#8B008B'}}> Permitir o recebimento de contato via SMS</Text>
+                   <Text style={{top:'3.5%', fontWeight:'bold', color:'#FFF'}}> Permitir o recebimento de contato via SMS</Text>
             </View>
             <View style={styles.ReceberWhatsApp}>          
                 <Switch
@@ -139,7 +147,7 @@ const Register = ({}) => {
                     onValueChange={toggleSwitchWhatsApp}
                     value={receberWhatsApp}
                     />
-                   <Text style={{top:'3.5%', fontWeight:'bold', color:'#8B008B'}}> Permitir o recebimento de contato via WhatsApp</Text>
+                   <Text style={{top:'3.5%', fontWeight:'bold', color:'#FFF'}}> Permitir o recebimento de contato via WhatsApp</Text>
             </View>
 
             <View style={styles.ReceberTermos}>          
@@ -151,11 +159,11 @@ const Register = ({}) => {
                     value={consentimento}
                     />
                     <View style={{top:2, flexDirection:'row'}}>
-                    <Text style={{top:'3.5%', fontWeight:'bold', color:'#8B008B'}}> Aceito os </Text>
+                    <Text style={{top:'3.5%', fontWeight:'bold', color:'#FFF'}}> Aceito os </Text>
                     <TouchableOpacity style={{top:9}}>
                         <Text style={{top:'3.5%', fontWeight:'bold', color:'#81b0ff'}}> termos e politicas </Text>
                     </TouchableOpacity>                    
-                    <Text style={{top:'3.5%', fontWeight:'bold', color:'#8B008B'}}> de uso do aplicativo</Text>
+                    <Text style={{top:'3.5%', fontWeight:'bold', color:'#FFF'}}> de uso do aplicativo</Text>
                     </View>                   
             </View>        
            </View>
@@ -176,18 +184,18 @@ export default Register;
 const styles = StyleSheet.create({
     Container:{
         flex:1,
-        backgroundColor:'#8B008B'
+        backgroundColor:'#FFF'
     },
     Body:{
         flex:0.5,
-        top:15,
+        paddingTop:'15%'
     },
     Title:{
         top:1,
         paddingLeft:'2%',
         fontWeight:'bold',
         fontSize:21,
-        color:'#F5DEB3'
+        color:'#2F4F4F'
     },
     Text:{
         width:'75%',
@@ -195,19 +203,17 @@ const styles = StyleSheet.create({
         fontSize:13,
         textAlign:'center',
         top:'10%',
-        color:'#F5DEB3',
-        fontWeight:'bold'
+        color:'#2F4F4F',
     },  
     ContainerForm:{   
         flex:2.5,
-        backgroundColor:'#F5DEB3',
+        backgroundColor:'#2F4F4F',
         borderTopLeftRadius:5,
         borderTopRightRadius:5,
         paddingStart:'5%',
         paddingEnd:'5%',
     },
-    IconNome:{
-        paddingTop:'10%',
+    IconNome:{        
         flexDirection:'row', 
         alignItems:'center',
     },
@@ -226,12 +232,12 @@ const styles = StyleSheet.create({
     Inputs:{
         width:'90%',
         borderBottomWidth:1,
+        borderColor: '#FFF',
         height:45,    
         borderRadius:5,
         marginTop:'5%',
         padding:10,
-        fontWeight:'bold',
-        color:'#F5DEB3',
+        color:'#2F4F4F',
         fontSize:14,    
     },
     ReceberEmail:{
@@ -255,14 +261,14 @@ const styles = StyleSheet.create({
     },
     Btn:{
         width:'75%',
-        backgroundColor:'#8B008B',
+        backgroundColor:'#FFF',
         borderRadius:30,
         height:30,
         alignItems:'center',
         justifyContent:'center',        
     },
     BtnText:{
-        color:'#F5DEB3',
+        color:'#2F4F4F',
         fontWeight:'bold',
     }
 

@@ -7,12 +7,13 @@ const Initial = ({}) => {
   const navigation = useNavigation();
  return (
   <View style={styles.Container}>
-    <StatusBar  backgroundColor = "#F5DEB3"/>
+    <StatusBar  backgroundColor = "#2F4F4F" barStyle="light-content"/>
     <View style={styles.ContainerLogo}>
       <Animatable.Image
-        animation="flipInY"
-        source={require('../../assets/images/icone-financas.png')}
-        style={{width: '60%'}}
+        animation="flipInX"
+        delay={800}
+        source={require('../../assets/images/pgto.png')}
+        style={{width: '75%'}}
         resizeMode="contain"
       />
     </View>
@@ -39,35 +40,36 @@ export default Initial;
 const styles = StyleSheet.create({
   Container:{
     flex:1,
-    backgroundColor:'#F5DEB3'
+    backgroundColor:'#FFF'
   },
   ContainerLogo:{
     flex:2,
-    backgroundColor:'#F5DEB3',
+    backgroundColor:'#FFF',
     justifyContent:'center',
     alignItems:'center',
   },
   ContainerForm:{
     flex:1,
-    backgroundColor:'#8B008B',
+    backgroundColor:'#2F4F4F',
     borderTopLeftRadius:5,
     borderTopRightRadius:5,
     paddingStart:'5%',
     paddingEnd:'5%',
   },
   Title:{
+    color:'#FFF',
     fontSize:17,
     fontWeight:'bold',
     marginTop:28,
     marginBottom:12,
   },
   TextItem:{
-    color:'#F5DEB3',
+    color:'#FFF',
     textAlign:'center',
   },
   BtnAcessar:{
     position:'absolute',
-    backgroundColor:'#F5DEB3',
+    backgroundColor:'#FFF',
     borderRadius:30,
     paddingVertical: 8,
     width:'60%',
@@ -78,6 +80,7 @@ const styles = StyleSheet.create({
   },
   TextAcessar:{
     fontWeight:'bold',
+    color:'#2F4F4F',
     fontSize:15
   },
   BtnCadastrar:{
@@ -92,6 +95,6 @@ const styles = StyleSheet.create({
   },
   TextCadastrar:{
     fontWeight:'bold',
-    color:'#F5DEB3'
+    color:'#FFF'
   }
 })

@@ -11,50 +11,54 @@ const Forgot =({}) => {
     const[token, setToken] = useState('')
  return (
    <View style={styles.Container}>
-       <StatusBar  backgroundColor = "#8B008B"/>
+       <StatusBar  backgroundColor = '#2F4F4F'/>
        <View style={styles.Body}>
             <Animatable.View delay={600} animation="fadeInLeft" style={styles.ContainerBody}>
                 <TouchableOpacity onPress={() => navigation.navigate('Auth')}>
                     <MaterialCommunityIcons
                         name="arrow-left-circle"
                         size={35} 
-                        color="#F5DEB3"
+                        color="#2F4F4F"
                     />
                 </TouchableOpacity>
-                <Text style={styles.TextBody}>Redefinir senha de acesso.</Text>
+                <Text style={styles.TextBody}>Redefinir senha de acesso</Text>
             </Animatable.View>
        </View>
        <View style={styles.Forms}>
+       <Text style={{top: '10%', left: 30, color: '#FFF', fontSize:15, fontWeight: 'bold'}} >Email</Text>
         <View style={styles.IconEmail}>
                 <Animatable.View delay={600} animation="fadeInLeft"View style={{top:10}}>
                     <MaterialCommunityIcons
                         name="email"
                         size={25} 
-                        color="black"
+                        color="#FFF"
 
                     />
                 </Animatable.View>
                 <TextInput
                 style={styles.Inputs}
-                placeholder='Email:'
+                placeholder='Ex: contato@domino.com'
+                placeholderTextColor='#FFF'
                 autoCorret={false}
                 onChangeText={(texto) => setEmail(texto)}
                 multiline={false}
                 value={email}
                 />
         </View>
+        <Text style={{top: '3%', left: 30, color: '#FFF', fontSize:15, fontWeight: 'bold'}} >CPF</Text>
         <View style={styles.IconCpf}>
                 <Animatable.View delay={600} animation="fadeInLeft"View style={{top:10}}>
                     <MaterialCommunityIcons
                         name="card-account-details"
                         size={25} 
-                        color="black"
+                        color="#FFF"
 
                     />
                 </Animatable.View>
                 <TextInput
                 style={styles.Inputs}
-                placeholder='CPF:'
+                placeholder='Ex: 12365478901'
+                placeholderTextColor='#FFF'
                 autoCorret={false}
                 onChangeText={(texto) => setCpf(texto)}
                 multiline={false}
@@ -63,20 +67,22 @@ const Forgot =({}) => {
                 />
         </View>
         <View style={{paddingLeft:'5%',width:'100%'}}>
-            <Text style={{textAlign:'center', color:'#8B008B', fontWeight:'bold', paddingTop:'10%', width:'100%'}}> Você tambem pode redefir a sua senha, preenchendo apenas o seu token. </Text>
+            <Text style={{textAlign:'center', color:'#FFF', fontWeight:'bold', paddingTop:'10%', width:'100%'}}> Você tambem pode redefir a sua senha, preenchendo apenas o seu token. </Text>
         </View>
+        <Text style={{top: '3%', left: 30, color: '#FFF', fontSize:15, fontWeight: 'bold'}} >Token</Text>
         <View style={styles.IconToken}>
                 <Animatable.View delay={600} animation="fadeInLeft"View style={{top:10}}>
                     <MaterialCommunityIcons
                         name="script-text-key"
-                        size={25} 
-                        color="black"
+                        size={25}                         
+                        color="#FFF"
 
                     />
                 </Animatable.View>
                 <TextInput
                 style={styles.Inputs}
-                placeholder='Token:'
+                placeholder='Ex: 1asd3d-543dasd-7849ras'
+                placeholderTextColor='#FFF'
                 autoCorret={false}
                 onChangeText={(texto) => setToken(texto)}
                 multiline={false}
@@ -99,7 +105,7 @@ export default Forgot;
 const styles = StyleSheet.create({
     Container:{
         flex:1,
-        backgroundColor:'#8B008B'
+        backgroundColor:'#FFF'
     },
     Body:{
         flex:0.5,
@@ -108,16 +114,18 @@ const styles = StyleSheet.create({
     ContainerBody:{
         flexDirection:'row',
         paddingLeft:'5%',
+        paddingTop: '10%',
     },
-    TextBody:{
-        paddingLeft:'5%',  
+    TextBody:{                        
+        paddingLeft:'10%', 
+        paddingTop:'1%', 
         fontWeight:'bold', 
-        fontSize:21,
-        color:'#F5DEB3'
+        fontSize:18,
+        color:'#2F4F4F'
     },
     Forms:{
         flex:2.5,
-        backgroundColor:'#F5DEB3',
+        backgroundColor:'#2F4F4F',
         borderTopLeftRadius:5,
         borderTopRightRadius:5,
         paddingStart:'5%',
@@ -139,29 +147,29 @@ const styles = StyleSheet.create({
     Inputs:{
         width:'90%',
         borderBottomWidth:1,
+        borderColor:'#FFF',
         height:45,    
         borderRadius:5,
         marginTop:'5%',
         padding:10,
-        fontWeight:'bold',
-        color:'#F5DEB3',
+        color:'#FFF',
         fontSize:14,    
     },
     BtnReset:{
         position:'absolute',
-        backgroundColor:'#8B008B',
+        backgroundColor:'#FFF',
         borderRadius:30,
         paddingVertical: 8,
         width:'60%',
         alignSelf:'center',
-        bottom:'30%',
+        bottom:'10%',
         alignItems:'center',
         justifyContent:'center',
     },
     TextReset:{
         fontWeight:'bold',
         fontSize:15,
-        color:'#F5DEB3'
+        color:'#2F4F4F'
 
     },
 

@@ -12,6 +12,7 @@ import Register from "./pages/Register";
 import Personality from "./pages/Personality";
 
 import Home from "./pages/Home";
+import Profile from "./pages/Profile";
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -20,7 +21,8 @@ const Drawer = createDrawerNavigator();
 const TelasDrawer =() => {
   return(
     <Drawer.Navigator drawerContent={props => <DrawerContent {...props} />} >
-      <Drawer.Screen name="Inicio" component={Home} options={{headerShown: false}}/>           
+      <Drawer.Screen name="Inicio" component={Home} options={{headerShown: false}}/> 
+      <Drawer.Screen name="Perfil" component={Profile} options={{headerShown: false}}/>           
     </Drawer.Navigator>
   )
 
@@ -38,7 +40,7 @@ const TelasStacks = () => {
       <Stack.Screen name="Forgot" component={Forgot}/>
       <Stack.Screen name="Register" component={Register}/>
       <Stack.Screen name="Personality" component={Personality}/>
-      <Stack.Screen name="Home" component={TelasDrawer}/>
+      <Stack.Screen name="Home" component={TelasDrawer}/>      
       
       </Stack.Navigator>
     )

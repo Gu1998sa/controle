@@ -143,7 +143,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage'
                             )}
                             label="Home"
                             labelStyle={{color: isTemaEscuro == true ? 'white' : 'black'}}
-                            onPress={()=> { navigation.navigate('Initial')}}
+                            onPress={()=> { navigation.navigate('Home')}}
                             
                             />
                          <DrawerItem
@@ -153,18 +153,28 @@ import AsyncStorage from '@react-native-async-storage/async-storage'
                                 color={isTemaEscuro == true ? 'white' : 'black'}
                                 size={size}/>
                             )}
-                            label="Perfil"
+                            label="Dados Pessoais"
                             labelStyle={{color: isTemaEscuro == true ? 'white' : 'black'}}
                             onPress={()=> { navigation.navigate('Perfil') }}/>
 
                          <DrawerItem
                             icon={({color, size, focused}) => (
                             <Icon
-                                name="book-outline"
+                                name="book-edit"
                                 color={isTemaEscuro == true ? 'white' : 'black'}
                                 size={size}/>
                             )}
-                            label="Historico"
+                            label="Lançamentos"
+                            labelStyle={{color: isTemaEscuro == true ? 'white' : 'black'}}
+                            onPress={()=> { navigation.navigate('Historia') }}/>
+                          <DrawerItem
+                            icon={({color, size, focused}) => (
+                            <Icon
+                                name="poll"
+                                color={isTemaEscuro == true ? 'white' : 'black'}
+                                size={size}/>
+                            )}
+                            label="Relatorios"
                             labelStyle={{color: isTemaEscuro == true ? 'white' : 'black'}}
                             onPress={()=> { navigation.navigate('Historia') }}/>
 
@@ -201,7 +211,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage'
                      size={size}/>
                  )}
                  label="Realizar Logout"
-                 labelStyle={{color: isTemaEscuro == true ? 'white' : 'black', fontWeight: 'bold'}}
+                 labelStyle={{color: isTemaEscuro == true ? 'white' : 'black'}}
                  onPress={()=> {closeApp()}}/>
              </Drawer.Section>
          </View>
