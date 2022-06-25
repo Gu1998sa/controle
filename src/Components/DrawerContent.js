@@ -60,7 +60,6 @@ import AsyncStorage from '@react-native-async-storage/async-storage'
         }
     
 
-    const [isTemaEscuro, setIsTemaEscuro ] = useState(false); 
     const [id, setId] = useState('')
     const [perfil, setPerfil] = useState();
     async function getIdStorage() {
@@ -92,21 +91,9 @@ import AsyncStorage from '@react-native-async-storage/async-storage'
         getIdStorage()     
       }, []);
     */
-    const ultdthralt = perfil?.dthoraalt;
-    
-
-    
-    const toggleTheme = () => {
-       
-        const dia = new Date().toLocaleDateString()
-        const time = new Date().toLocaleTimeString()
-        const dateTime = dia + ' ' + time;
-        setIsTemaEscuro(!isTemaEscuro);
-       
-    }
      return(
          <View style={{flex: 1}}>
-             <DrawerContentScrollView {...props} style={{flex: 1, top: 0, bottom: 0, backgroundColor: isTemaEscuro == true ? 'black' : 'white' }}  >
+             <DrawerContentScrollView {...props} style={{flex: 1, top: 0, bottom: 0, backgroundColor:  'white' }}  >
                  <View style={style.drawerContent}>
                     <View>
                         <View style={{flexDirection: 'row', marginTop: 15}}>
@@ -124,11 +111,11 @@ import AsyncStorage from '@react-native-async-storage/async-storage'
                                 />
                             }                            
                             <View style={{marginLeft: 5, flexDirection:'column' }}  >
-                                <Title style={[style.title,{color: isTemaEscuro == true ? 'white' : 'black'}]} onPress={() => {props.navigation.navigate('Perfil')} } >{perfil?.nome}</Title>
-                                <Caption style={[style.caption,{color: isTemaEscuro == true ? 'white' : 'black'}]} onPress={() => {props.navigation.navigate('Perfil')} }>
-                                   {perfil?.telefone}                                      
+                                <Title style={[style.title,{color:'black'}]} onPress={() => {props.navigation.navigate('Perfil')} } >{perfil?.nome != null ? perfil?.nome : 'Gustavo Fermino de Sá'}</Title>
+                                <Caption style={[style.subCaption,{color: 'black'}]} onPress={() => {props.navigation.navigate('Perfil')} }>
+                                   {perfil?.telefone != null ? perfil?.telefone : '53 99906-3049'}                                      
                                 </Caption>
-                                <Caption style={[style.subCaption,{color: isTemaEscuro == true ? 'white' : 'black'}]} onPress={() => {props.navigation.navigate('Perfil')} } >{perfil?.email}</Caption>
+                                <Caption style={[style.subCaption,{color: 'black'}]} onPress={() => {props.navigation.navigate('Perfil')} } >{perfil?.email != null ? perfil?.email : 'gustavofermino09@gmail.com'}</Caption>
                             </View>
                         </View>
 
@@ -138,80 +125,70 @@ import AsyncStorage from '@react-native-async-storage/async-storage'
                             icon={({color, size}) => (
                             <Icon
                                 name="home-outline"
-                                color={isTemaEscuro == true ? 'white' : 'black'}
+                                color={'black'}
                                 size={size}/>
                             )}
-                            label="Home"
-                            labelStyle={{color: isTemaEscuro == true ? 'white' : 'black'}}
-                            onPress={()=> { navigation.navigate('Home')}}
+                            label="Visão Geral"
+                            labelStyle={{color: 'black'}}
+                            onPress={()=> { navigation.navigate('Inicio')}}
                             
                             />
                          <DrawerItem
                             icon={({color, size, focused}) => (
                             <Icon
                                 name="account-details"
-                                color={isTemaEscuro == true ? 'white' : 'black'}
+                                color={'black'}
                                 size={size}/>
                             )}
                             label="Dados Pessoais"
-                            labelStyle={{color: isTemaEscuro == true ? 'white' : 'black'}}
+                            labelStyle={{color: 'black'}}
                             onPress={()=> { navigation.navigate('Perfil') }}/>
 
                          <DrawerItem
                             icon={({color, size, focused}) => (
                             <Icon
                                 name="book-edit"
-                                color={isTemaEscuro == true ? 'white' : 'black'}
+                                color={'black'}
                                 size={size}/>
                             )}
                             label="Lançamentos"
-                            labelStyle={{color: isTemaEscuro == true ? 'white' : 'black'}}
-                            onPress={()=> { navigation.navigate('Historia') }}/>
+                            labelStyle={{color:'black'}}
+                            onPress={()=> { navigation.navigate('Lancamentos') }}/>
                           <DrawerItem
                             icon={({color, size, focused}) => (
                             <Icon
                                 name="poll"
-                                color={isTemaEscuro == true ? 'white' : 'black'}
+                                color={'black'}
                                 size={size}/>
                             )}
                             label="Relatorios"
-                            labelStyle={{color: isTemaEscuro == true ? 'white' : 'black'}}
+                            labelStyle={{color:'black'}}
                             onPress={()=> { navigation.navigate('Historia') }}/>
 
                         <DrawerItem
                             icon={({color, size, focused}) => (
                             <Icon
                                 name="cog-outline"
-                                color={isTemaEscuro == true ? 'white' : 'black'}
+                                color={'black'}
                                 size={size}/>
                             )}
                             label="Configurações"
-                            labelStyle={{color: isTemaEscuro == true ? 'white' : 'black'}}
+                            labelStyle={{color:'black'}}
                             onPress={()=> { navigation.navigate('Configs') }}/>
                         
                     </Drawer.Section>
-                    <Drawer.Section >
-                        <TouchableRipple onPress={() => {toggleTheme()}}>
-                            <View style={style.preferences}>                                
-                                <Text style={{color: isTemaEscuro == true ? 'white' : 'black'}} >Tema Escuro </Text>
-                                <View pointerEvents="none">
-                                    <Switch value={isTemaEscuro} />
-                                </View>                                
-                            </View>
-                        </TouchableRipple>
-                    </Drawer.Section>
                  </View>
              </DrawerContentScrollView>
-             <Drawer.Section style={[style.bottomDrawerSection, {backgroundColor: isTemaEscuro ==true ? 'black':'white'}]}>
+             <Drawer.Section style={[style.bottomDrawerSection, {backgroundColor:'white'}]}>
                  <DrawerItem
                  icon={({color, size}) => (
                      <Icon
                      name="exit-to-app"
-                     color={isTemaEscuro == true ? 'white' : 'black'}
+                     color={'black'}
                      size={size}/>
                  )}
                  label="Realizar Logout"
-                 labelStyle={{color: isTemaEscuro == true ? 'white' : 'black'}}
+                 labelStyle={{color:'black'}}
                  onPress={()=> {closeApp()}}/>
              </Drawer.Section>
          </View>
@@ -229,11 +206,10 @@ import AsyncStorage from '@react-native-async-storage/async-storage'
      title:{
          fontSize: 16,
          marginTop: 3,
-         fontWeight: 'bold'
      },
      subCaption:{
-        fontSize:14,
-        lineHeight: 14,
+        fontSize:12,
+        lineHeight: 13,        
      },
 
      drawerSection:{

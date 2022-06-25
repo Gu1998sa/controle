@@ -9,10 +9,17 @@ const Auth = ({}) => {
   const[email, setEmail] = useState('')
   const[senha, setSenha] = useState('')
   const[hidePass, setHidePass] = useState(true);
+  const[definiupesona, setDefiniuPersona] = useState(true)
 
   function AuthLogin(){
     if(email=='gustavo' && senha=='1'){
-      navigation.navigate('Personality')
+      if(definiupesona == false){
+        navigation.navigate('Personality')
+      }
+      else{
+        navigation.navigate('Home')
+      }
+      
     }else{
       alert('Usuario Invalido!')
     }
@@ -24,7 +31,14 @@ const Auth = ({}) => {
      <View style={styles.Header}>
         <Animatable.Text delay={1000} animation="fadeInLeft" style={styles.Title}>
           Bem-vindo(a)
-        </Animatable.Text>    
+        </Animatable.Text>
+        <Animatable.Image
+            animation="fadeInLeft"
+            delay={1000}
+            source={require('../../assets/images/pgto.png')}
+            style={{width: '20%', bottom: 135, right: 15}}
+            resizeMode="contain"
+          />
      </View>
      <Animatable.View animation="fadeInUp" style={styles.Forms}>
       <Text style={styles.TitleAuth}>Autenticação</Text>
@@ -120,12 +134,14 @@ const styles = StyleSheet.create({
     backgroundColor:'#FFF',
   },
   Header:{
-    flex:0.75,   
-    paddingLeft:'5%'       
+    flex:1,   
+    paddingLeft:'5%',
+    flexDirection:'row',
+    justifyContent:'space-between'          
   },
   Title:{
     fontWeight:'bold',
-    paddingTop: '20%',
+    paddingTop: '25%',
     fontSize:24,
     color:'#2F4F4F'
   },
@@ -136,7 +152,9 @@ const styles = StyleSheet.create({
     borderTopRightRadius:5,
     paddingStart:'5%',
     paddingEnd:'5%',  
-    paddingTop:'15%'  
+    paddingTop:'15%',
+      
+
   },
   IconEmail:{
     flexDirection:'row', 
@@ -177,7 +195,7 @@ const styles = StyleSheet.create({
   BtnLogin:{
     justifyContent:'center',
     alignItems:'center',
-    top:'10%',
+    top:'5%',
     height:35,
     borderRadius:25,
     backgroundColor:'#FFF'
@@ -189,7 +207,7 @@ const styles = StyleSheet.create({
   },
   BtnLoginSocial:{
     position:'absolute',
-    bottom:45,
+    bottom:25,
     left:'37%',    
     backgroundColor:'#0000ff',
     borderRadius:5,
@@ -204,7 +222,7 @@ const styles = StyleSheet.create({
   },
   BtnCreate:{
     position:'absolute',
-    bottom:15, 
+    bottom:5, 
     left:'30%'   
   },
   TextCreate:{

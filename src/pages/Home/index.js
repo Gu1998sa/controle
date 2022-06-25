@@ -273,17 +273,10 @@ const Home =({}) => {
            </DialogContent>
        </Dialog>
        <View style={styles.Header}>
-           <View style={{flexDirection:'row', alignItems:'center', justifyContent:'flex-start', width:'100%', top:'10%'}}>
-               <TouchableOpacity style={{paddingLeft:'5%', paddingTop: '5%'}} onPress={() => navigation.openDrawer()} >
-                <MaterialCommunityIcons
-                    name='menu-open'
-                    size={30}
-                    color="#2f4f4f"
-                    />
-               </TouchableOpacity>        
+           <View style={{flexDirection:'row', alignItems:'center', justifyContent:'center', width:'100%'}}>      
                 <Picker
                         selectedValue={selectedValue}
-                        style={{ height: 50, width: 155, marginLeft: '25%' }}
+                        style={{ height: 50, width: 155, bottom: 20, left: 20}}
                         mode="dropdown"                                    
                         onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue)}
                     >
@@ -381,10 +374,8 @@ const styles = StyleSheet.create({
     Header:{
         flex:0.25,
         alignItems:'center',
-        top:0
     },
     SubHeader:{
-        top: '25%',
         width:'100%',
         alignItems:'center',
         justifyContent:'center'
